@@ -1,0 +1,315 @@
+<html>
+<head>
+<title> Calendar </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" >
+unction holiday(){
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://holidayapi.com/v1/holidays?country=US&year=2017&key=85110baa-372b-4698-975c-b07394fb7a53", false);
+xhr.send();
+
+response = JSON.parse(xhr.response);
+var arr = [];
+for (var date in response.holidays) {
+  var arr2 = [];
+  for(var i = 0; i < response.holidays[date].length; i++){
+    arr2.push(response.holidays[date][i].date.substr(5))
+    arr2.push(response.holidays[date][i].name);
+    arr.push(arr2);
+  }
+  
+}
+
+for (var j=0;j<arr.length;j++){
+arrString = arr.join(' ');
+}
+return (arrString);
+}
+
+
+
+</script>
+</head>
+<body onload=holiday()>
+<header>
+
+<img class="logo"src="title.png">
+
+</header>
+<div id = 'myapi'> </div>
+
+<div id="clear"></div> 
+<!--<center>
+<div id="login-form">
+<form>
+<table width="70%">
+<tr>
+<td><h2>Select </h2></td>
+</tr>
+<tr>
+<td><input type="date"></td>
+</tr>
+</table>
+</form>
+</div>
+</center>-->
+<button></button>
+<center>
+<tr>
+<td><h2>Week View<br><br></h2></td>
+</tr>
+<table border="1px" width="60%">
+<tr>
+<td> </td>
+<td>Sun</td>
+<td> Mon</td>
+<td>Tues</td>
+<td> Wed</td>
+<td> Thurs</td>
+<td> Fri</td>
+<td>Sat </td>
+</tr>
+<tr>
+<td>00.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> 01.00</td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>02.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>03.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>04.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>05.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>06.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>07.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>08.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>09.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>10.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>11.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>12.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>13.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>14.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>15.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>16.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>17.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>18.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>19.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>20.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>21.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>22.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>23.00 </td>
+<td></td>
+<td> </td>
+<td></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</table>
+</center>
+</body>
+</html>
