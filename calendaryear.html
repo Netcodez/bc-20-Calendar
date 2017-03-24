@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <link rel = "stylesheet" type = "text/css" href = "css/calendar.css">
+        <script type = "text/javascript" src = "javascript/jquery.js"></script>
+        <script type = "text/javascript" src = "javascript/calendaryear.js"></script>
+
+    </head>
+    <body style = "background-color:#f5dbb6;">
+        <div class = "title">CALENDAR WEB APP</div>
+            <div class = "container">
+                <div>
+                    <ul class = "nav nav-pills"class = "pull-right">
+                        <li><button class = "button"><a href ="calendarweek.html">WEEK</a></button></li>
+                        <li ><button class = "button"><a href = "calendarmonth.html">MONTH</a></button></li>
+                        <li ><button class = "button"><a href = "calendaryear.html">YEAR</a></button></li>
+                    </ul>
+                </div>
+            </div>
+        <div style = "width: 100% overflow-x:auto">
+            <TABLE style = "margin-left: 200px;" class = "pull-left" CELLPADDING = 0 CELLSPACING = 0 BORDER = 0>
+                <TR><TD COLSPAN = 7>
+                    <SELECT id = "selectElementId" name = "year" onChange = "refresh();"></SELECT>
+                    </td>
+                        <script type = "text/javascript">
+                            var min = 1900,
+                            max = 2100,
+                            select = document.getElementById('selectElementId');
+
+                            for (var i = min; i <= max; i ++){
+                            var opt = document.createElement('option');
+                            opt.value = i;
+                            opt.innerHTML = i;
+                            select.appendChild(opt);
+                            }
+
+                            select.value = new Date().getFullYear();
+                            </script>
+                    
+                </tr>
+            </table>
+        </div>
+        <div>
+            <div style = "clear: both; width: 50%; margin-left: 500px; margin-right: auto; margin-bottom: 20px;">
+                <INPUT type = button name = "previousYear" value = " &#10096;&#10096;  "  onClick = "setPreviousYear()" style = "width: 100px; border-radius: 5px; background-color: #25A6E1;">
+                <INPUT type = button name = "today" value = "Today"  onClick = "setToday()"  style = "width: 100px; border-radius: 5px; background-color: #25A6E1;">
+                <INPUT type = button name = "nextYear" value = "  &#10097;&#10097; "  onClick = "setNextYear()"  style = "width: 100px; border-radius: 5px; background-color: #25A6E1;">
+            </div>
+        </div>
+        <div id = "mwaka" style = "margin-left: 350px;">
+            <script type = "text/javascript">refresh ();</script>
+        </div>
+    </body>
+</html>
