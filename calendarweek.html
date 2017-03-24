@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      
+        <link rel = "stylesheet" type = "text/css" href = "css/calendar.css">
+        <script type = "text/javascript" src = "javascript/jquery.js"></script>
+        <script type = "text/javascript" src = "javascript/calendarweek.js"></script>
+
+    </head>
+     <body style = "background-color:#f5dbb6;">
+        <div class = "title">CALENDAR WEB APP</div>
+        <div class = "container">
+            <div>
+                <ul class = "nav nav-pills"class = "pull-right">
+                    <li class = "active"><a href="#">WEEK</a></li>
+                    <li><a href="calendarmonth.html">MONTH</a></li>
+                    <li><a href = "calendaryear.html">YEAR</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style = "width: 100%">
+                    <table style="margin-left: 40px;" class = "pull-left" CELLPADDING = 0 CELLSPACING = 0 BORDER = 0>
+                        <tr><td COLSPAN = 7>
+                            <select id = "dateValue" name = "date" onchange = "calendarweek();">
+                                <option value = "1">1</option>
+                                <option value = 2>2</option>
+                                <option value = 3>3</option>
+                                <option value = 4>4</option>
+                                <option value = 5>5</option>
+                                <option value = 6>6</option>
+                                <option value = 7>7</option>
+                                <option value = 8>8</option>
+                                <option value = 9>9</option>
+                                <option value = 10>10</option>
+                                <option value = 11>11</option>
+                                <option value = 12>12</option>
+                                <option value = 13>13</option>
+                                <option value = 14>14</option>
+                                <option value = 15>15</option>
+                                <option value = 16>16</option>
+                                <option value = 17>17</option>
+                                <option value = 18>18</option>
+                                <option value = 19>19</option>
+                                <option value = 20>20</option>
+                                <option value = 21>21</option>
+                                <option value = 22>22</option>
+                                <option value = 23>23</option>
+                                <option value = 24>24</option>
+                                <option value = 25>25</option>
+                                <option value = 26>26</option>
+                                <option value = 27>27</option>
+                                <option value = 28>28</option>
+                                <option value = 29>29</option>
+                                <option value = 30>30</option>
+                                <option value = 31>31</option>
+                            </td>
+
+                            <td>
+                                <select id = "monthValue" name = "month" onChange = "calendarweek();">
+                                <option value = 0>JANUARY</option>
+                                <option value = 1>FEBRUARY</option>
+                                <option value = 2>MARCH</option>
+                                <option value = 3>APRIL</option>
+                                <option value = 4>MAY</option>
+                                <option value = 5>JUNE</option>
+                                <option value = 6>JULY</option>
+                                <option value = 7>AUGUST</option>
+                                <option value = 8>SEPTEMBER</option>
+                                <option value = 9>OCTOBER</option>
+                                <option value = 10>NOVEMBER</option>
+                                <option value = 11>DECEMBER</option>
+                                </select></li>
+                            </td>
+                            <td>
+                            <select id = "selectElementId" name = "year" onChange = "calendarweek();"></select>
+                            </td>
+                                <script type = "text/javascript">
+                                    var min = 1900,
+                                    max = 2100,
+                                    select = document.getElementById('selectElementId');
+
+                                    for (var i = min; i<=max; i++){
+                                    var opt = document.createElement('option');
+                                    opt.value = i;
+                                    opt.innerHTML = i;
+                                    select.appendChild(opt);
+                                    }
+
+                                    select.value = new Date().getFullYear();
+                                    </script>
+                            
+                        </tr>
+                    </table>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
+            <table id = "weektable"></table>
+            <tr>
+                <td>SUNDAY</td>
+                <td>MONDAY</td>
+                <td>TUESDAY</td>
+                <td>WEDNESDAY</td>
+                <td>THURSDAY</td>
+                <td>FRIDAY</td>
+                <td>SARTUDAY</td>
+            </tr>
+            <tr>
+                <td id = "sun"></td>
+                <td id = "mon"></td>
+                <td id = "tue"></td>
+                <td id = "wed"></td>
+                <td id = "thur"></td>
+                <td id = "fri"></td>
+                <td id = "sat"></td>
+            </tr>
+        <div>
+    </body>
+</html>
